@@ -1,0 +1,9 @@
+$bgcolor: #ccc;
+$margin: 20px;
+
+svg {
+  display: block;
+  margin: $margin 0;
+  padding: $margin;
+  border: 2px solid $bgcolor;
+}
