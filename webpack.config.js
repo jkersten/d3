@@ -5,7 +5,7 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './src/index.ts',
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
@@ -16,12 +16,12 @@ module.exports = {
     new HtmlWebpackPlugin({ title: 'D3' }),
     new webpack.HotModuleReplacementPlugin()
   ],
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'awesome-typescript-loader'
+      },
       {
         test: /\.scss$/,
         use: [
@@ -32,16 +32,19 @@ module.exports = {
       },
       {
         test: /\.(csv|tsv)$/,
-        use: [
-          'csv-loader'
-        ]
+        use: 'csv-loader'
       },
       {
         test: /\.xml/,
-        use: [
-          'xml-loader'
-        ]
-      },
+        use: 'xml-loader'
+      }
     ]
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js']
+  },
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
   }
 };

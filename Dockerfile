@@ -7,6 +7,6 @@ WORKDIR /app
 
 COPY . /app
 
-RUN yarn install --pure-lockfile
+RUN yarn install
 
 EXPOSE 8080

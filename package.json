@@ -17,6 +17,8 @@
     "d3": "^5.7.0"
   },
   "devDependencies": {
+    "@types/d3": "^5.7.0",
+    "awesome-typescript-loader": "^5.2.1",
     "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^2.1.0",
     "csv-loader": "^3.0.2",
@@ -26,6 +28,7 @@
     "papaparse": "^4.5.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
+    "typescript": "^3.2.4",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.14"
